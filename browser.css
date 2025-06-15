@@ -19,8 +19,203 @@ svg {
 	-webkit-app-region: no-drag !important;
 }
 div[class^="styles__HeaderContainer"] { /* Mixcloud Logo */
-	padding-left: 90px !important;
+	padding-left: 128px !important;
 }
 div[class^="styles__HeaderSection"] a:focus-visible { /* Electron focuses the first link, and Mixcloud shows an ugly outline */
 	outline: 0;
+}
+
+/* Dark mode variants */
+/* :root[data-theme="dark"],
+:root.dark-mode,
+body.dark-mode { */
+:root,
+body {
+	/* Core colors - maintaining vibrancy but adjusted for dark backgrounds */
+	--color-core-primary: #6b33ff !important; /* Slightly brighter purple for visibility on dark */
+	--color-core-primary-hover: #5a1aff !important;
+	--color-core-secondary: #c445b8 !important; /* 50% darker pink as requested */
+	--color-core-secondary-hover: #b833aa !important;
+	--color-core-premium: #b8b60d !important; /* Dimmed yellow for dark mode */
+	--color-core-premium-hover: #a3a10b !important;
+
+	/* Utility colors - inverted for dark mode */
+	--color-core-subtle: #3a3d47 !important; /* Dark gray instead of light */
+	--color-core-success: #0d3d25 !important; /* Dark green background */
+	--color-core-warning: #3d3b00 !important; /* Dark yellow background */
+	--color-core-info: #1a1b3d !important; /* Dark blue background */
+	--color-core-error: #3d0a2e !important; /* Dark pink background */
+	--color-core-disabled: #888c9a !important; /* Lighter gray for visibility */
+	--color-core-important: #ff1557 !important; /* Brighter red for dark mode */
+	--color-core-important-hover: #ff3870 !important;
+	--color-core-confirm: #13d691 !important; /* Slightly brighter green */
+	--color-core-confirm-hover: #11c484 !important;
+	--color-core-black: #fff !important; /* Inverted to white */
+
+	/* Text colors - inverted for readability */
+	--color-text-primary: #e8e9ec !important; /* Light gray instead of dark */
+	--color-text-secondary: #a8acb8 !important; /* Medium-light gray */
+	--color-text-tertiary: #1a1d26 !important; /* Dark instead of white */
+	--color-text-hover: #f0f1f3 !important; /* Very light gray */
+	--color-text-link: #b8bcff !important; /* Light purple for links */
+	--color-text-link-hover: #d0d3ff !important; /* Lighter purple on hover */
+
+	/* Surface colors - dark backgrounds */
+	--color-surface-primary: #1a1d26 !important; /* Dark background */
+	--color-surface-primary-hover: #20232d !important; /* Slightly lighter on hover */
+	--color-surface-secondary: #2d3142 !important; /* Medium dark */
+	--color-surface-secondary-hover: #363a4d !important; /* Lighter on hover */
+	--color-surface-tertiary: #252833 !important; /* Dark gray */
+	--color-surface-tertiary-hover: #2d3142 !important; /* Slightly lighter */
+	--color-surface-subtle: rgba(37,40,51,.3) !important; /* Dark with transparency */
+	--color-surface-subtle-hover: rgba(37,40,51,.5) !important;
+	--color-surface-raised: #2d3142 !important; /* Elevated surface in dark mode */
+
+	/* Border colors - subtle dark borders */
+	--color-border-primary: #2d3142 !important; /* Dark gray border */
+	--color-border-secondary: #3a3d47 !important; /* Slightly lighter border */
+
+	/* Social colors - slightly adjusted for dark mode */
+	--color-twitter: #1da1f2 !important; /* Keep original */
+	--color-twitter-dark: #0c85d0 !important;
+	--color-facebook: #4d79ff !important; /* Slightly brighter for visibility */
+	--color-facebook-dark: #3360ff !important;
+	--color-facebook-light: #7799ff !important; /* Adjusted for dark mode */
+	--color-focus-indicator: #ff8c00 !important; /* Keep orange focus indicator */
+
+	/* Waveform colors - adjusted for dark backgrounds */
+	--color-waveform-active-default: #4a4d57 !important; /* Darker gray */
+	--color-waveform-active-listened: #6b33ff !important; /* Match primary color */
+	--color-waveform-active-interacted: rgba(107,51,255,.5) !important;
+	--color-waveform-initial-default: #3a3d47 !important; /* Dark gray */
+	--color-waveform-initial-listened: #888c9a !important; /* Light gray */
+	--color-waveform-initial-interacted: rgba(136,140,154,.5) !important;
+
+	/* Spacing remains the same */
+	--spacing-xxs: .25rem !important;
+	--spacing-xs: .5rem !important;
+	--spacing-s: 1rem !important;
+	--spacing-m: 1.5rem !important;
+	--spacing-ml: 2rem !important;
+	--spacing-l: 3rem !important;
+	--spacing-xl: 4rem !important;
+	--spacing-xxl: 6rem !important;
+	--spacing-xxxl: 8rem !important;
+	--spacing-player-variable-height: 0rem !important;
+	--spacing-player-queue-height: 3.25rem !important;
+	--spacing-player-height: 3.25rem !important;
+	--spacing-header-height: 3.125rem !important;
+}
+
+/* the following should be limited only to elements nested under a div whose class name starts with "styles__PlayerWrapper" */
+/* it preserves the original mixpanel colors because it's already dark */
+div[class^="styles__PlayerWrapper"] {
+	--color-core-primary: #5000ff !important;
+	--color-core-primary-hover: #4100cc !important;
+	--color-core-secondary: #f778eb !important;
+	--color-core-secondary-hover: #f555e5 !important;
+	--color-core-premium: #f3f810 !important;
+	--color-core-premium-hover: #e4e807 !important;
+	--color-core-subtle: #d2d3d7 !important;
+	--color-core-success: #e3faf0 !important;
+	--color-core-warning: #f9fbb2 !important;
+	--color-core-info: #e2e3ff !important;
+	--color-core-error: #fde1f7 !important;
+	--color-core-disabled: #61667a !important;
+	--color-core-important: #d20442 !important;
+	--color-core-important-hover: #ef054b !important;
+	--color-core-confirm: #0cc281 !important;
+	--color-core-confirm-hover: #0bad74 !important;
+	--color-core-black: #000 !important;
+	--color-text-primary: #171c2b !important;
+	--color-text-secondary: #61667a !important;
+	--color-text-tertiary: #fff !important;
+	--color-text-hover: #2a3145 !important;
+	--color-text-link: #171c2b !important;
+	--color-text-link-hover: #61667a !important;
+	--color-surface-primary: #fff !important;
+	--color-surface-primary-hover: #f7f7f7 !important;
+	--color-surface-secondary: #171c2b !important;
+	--color-surface-secondary-hover: #22293c !important;
+	--color-surface-tertiary: #f4f4f5 !important;
+	--color-surface-tertiary-hover: #ececee !important;
+	--color-surface-subtle: rgba(244,244,245,.3) !important;
+	--color-surface-subtle-hover: rgba(244,244,245,.5) !important;
+	--color-surface-raised: #fff !important;
+	--color-border-primary: #f4f4f5 !important;
+	--color-border-secondary: #d2d3d7 !important;
+	--color-twitter: #1da1f2 !important;
+	--color-twitter-dark: #0c85d0 !important;
+	--color-facebook: #3360ff !important;
+	--color-facebook-dark: #0038ff !important;
+	--color-facebook-light: #68f !important;
+	--color-focus-indicator: #ff8c00 !important;
+	--color-waveform-active-default: #d2d3d7 !important;
+	--color-waveform-active-listened: #5000ff !important;
+	--color-waveform-active-interacted: rgba(80,0,255,.5) !important;
+	--color-waveform-initial-default: #d2d3d7 !important;
+	--color-waveform-initial-listened: #61667a !important;
+	--color-waveform-initial-interacted: rgba(97,102,122,.5) !important;
+	--spacing-xxs: .25rem !important;
+	--spacing-xs: .5rem !important;
+	--spacing-s: 1rem !important;
+	--spacing-m: 1.5rem !important;
+	--spacing-ml: 2rem !important;
+	--spacing-l: 3rem !important;
+	--spacing-xl: 4rem !important;
+	--spacing-xxl: 6rem !important;
+	--spacing-xxxl: 8rem !important;
+	--spacing-player-variable-height: 0rem !important;
+	--spacing-player-queue-height: 3.25rem !important;
+	--spacing-player-height: 3.25rem !important;
+	--spacing-header-height: 3.125rem !important;
+}
+
+div[class^="styles__LeftNavSideNavWrapper"] {
+
+	/* take any svg nested in this and make the fill color #fff */
+	svg {
+		fill: #fff !important;
+	}
+}
+
+div[class^="styles__DropdownMenu"] {
+	background: rgba(0,0,0,.9) !important;
+}
+
+div[class^="styles__TopLevelMenuButton"]::after  {
+	background-color: #f00 !important;
+}
+
+li[class^="styles__Top"] button::after  {
+	filter: brightness(1) invert(100%);
+}
+
+div[class^="styles__StaticLogo"] svg {
+	fill: #fff;
+}
+
+div[class^="styles__LeftNavSideNavWrapper"] div[class^="Sticky__StickyItem"] {
+	top: 25px;
+}
+
+/* Dark scrollbars matching the theme */
+::-webkit-scrollbar {
+	background-color: #1a1d26;
+  width: 18px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1d26; /* Using --color-surface-primary from dark theme */
+	margin: 2px 0; /* adds spacing at top and bottom of scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a3d47; /* Using --color-border-secondary for subtle visibility */
+  border-radius: 10px;
+	border: 5px solid #1a1d26;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #505461; /* Using --color-core-primary on hover */
 }

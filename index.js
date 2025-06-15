@@ -116,6 +116,10 @@ app.on('ready', () => {
 		height: 800,
 		minHeight: 400,
 		acceptFirstMouse: true,
+		trafficLightPosition: {
+			x: 20,
+			y: 15
+		},
 		webPreferences: {
 			nodeIntegration: false,
 			preload: path.join(__dirname, 'browser.js'),
